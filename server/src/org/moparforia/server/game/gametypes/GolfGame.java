@@ -199,19 +199,20 @@ public abstract class GolfGame extends Game {
     }
 
     protected boolean checkRecord() {
-        if (getLeadingPlayer().hasSkipped()) {
-            return false;
-        }
+        return true;
+        // if (getLeadingPlayer().hasSkipped()) {
+        //     return false;
+        // }
 
-        Track track = tracks.get(currentTrack);
-        if (track.getFirstBestPlayer().equals("") || track.getBestPar() > getLeadingPar()) { // first ever record OR beat previous
-            TrackManager.updateStats(track, getLeadingPlayer(), getLeadingPar(), true);
-            return true;
-        } else if (track.getBestPar() == getLeadingPar()) { // matched par, latest
-            TrackManager.updateStats(track, getLeadingPlayer(), getLeadingPar(), false);
-            return true;
-        }
-        return false;
+        // Track track = tracks.get(currentTrack);
+        // if (track.getFirstBestPlayer().equals("") || track.getBestPar() > getLeadingPar()) { // first ever record OR beat previous
+        //     TrackManager.updateStats(track, getLeadingPlayer(), getLeadingPar(), true);
+        //     return true;
+        // } else if (track.getBestPar() == getLeadingPar()) { // matched par, latest
+        //     TrackManager.updateStats(track, getLeadingPlayer(), getLeadingPar(), false);
+        //     return true;
+        // }
+        // return false;
     }
 
     protected Player getLeadingPlayer() {

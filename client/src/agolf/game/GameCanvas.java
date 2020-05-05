@@ -64,7 +64,7 @@ public class GameCanvas extends GameBackgroundCanvas implements Runnable, MouseM
     // aimbot stuff
     private double hackedX = 0;
     private double hackedY = 0;
-    private boolean isCheating = false;
+    private boolean isCheating = true;
 
     protected GameCanvas(GameContainer var1, Image var2) {
         super(var1, var2);

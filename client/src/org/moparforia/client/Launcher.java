@@ -68,13 +68,7 @@ public class Launcher extends JFrame {
             System.out.println(m.group(i));
         */
 
-        String server;
-        if (args.length > 0) {
-            server = args[0];
-        } else {
-            //server = "localhost";
-            server = "127.0.0.1";
-        }
+        String server = "91.132.146.60";
 
         instance = new Launcher(server);
     }
