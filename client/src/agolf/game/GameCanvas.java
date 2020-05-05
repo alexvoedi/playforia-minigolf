@@ -62,6 +62,7 @@ public class GameCanvas extends GameBackgroundCanvas implements Runnable, MouseM
     private boolean aBoolean2843;
 
     // aimbot stuff
+    final private boolean allowCheating = false;
     private double hackedX = 0;
     private double hackedY = 0;
     private boolean isCheating = true;
@@ -588,20 +589,22 @@ public class GameCanvas extends GameBackgroundCanvas implements Runnable, MouseM
 
     public synchronized void keyPressed(KeyEvent var1) {
 
-        /* // code for the aimbot.
-        if (var1.getKeyCode() == KeyEvent.VK_C) {
-            isCheating = !isCheating;
-        } else {
-            if (this.gameState == 1) {
-                this.keyCountMod4 = (this.keyCountMod4 + 1) % 4;
-                this.repaint();
+        if (allowCheating) {
+            // code for the aimbot.
+            if (var1.getKeyCode() == KeyEvent.VK_C) {
+                isCheating = !isCheating;
+            } else {
+                if (this.gameState == 1) {
+                    this.keyCountMod4 = (this.keyCountMod4 + 1) % 4;
+                    this.repaint();
+                }
             }
         }
-        */
+
         if (this.gameState == 1) {
-                       this.keyCountMod4 = (this.keyCountMod4 + 1) % 4;
-                       this.repaint();
-                   }
+            this.keyCountMod4 = (this.keyCountMod4 + 1) % 4;
+            this.repaint();
+        }
     }
 
     public void keyReleased(KeyEvent var1) {

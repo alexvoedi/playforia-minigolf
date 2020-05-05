@@ -18,7 +18,7 @@ public class ClientChannelHandler extends IdleStateAwareChannelHandler {
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
         Packet packet = (Packet) e.getMessage();
-        System.out.println("Niggers: " + e.getMessage());
+        System.out.println(">>> " + e.getMessage());
         server.addEvent(new PacketReceivedEvent(packet));
     }
 

@@ -45,7 +45,9 @@ class TrackTestLoginPanel extends Panel implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent evt) {
         String username = this.textFieldName.getText().trim();
         String password = this.textFieldPassword.getText().trim();
+        //String password = '';
         this.gameApplet.trackTestLogin(username, password);
+
     }
 
     public void keyPressed(KeyEvent evt) {
@@ -77,7 +79,7 @@ class TrackTestLoginPanel extends Panel implements ActionListener, KeyListener {
         this.textFieldPassword.setBackground(Color.white);
         this.textFieldPassword.setForeground(Color.black);
         textFieldPassword.setEchoChar('*');
-        this.add(this.textFieldPassword);
+        //this.add(this.textFieldPassword); //Don't show this field
         this.buttonOk = new Button("OK");
         this.buttonOk.setBounds(this.width / 2 - 75, this.height / 2 + 50, 75, 25);
         this.buttonOk.addActionListener(this);
@@ -87,20 +89,21 @@ class TrackTestLoginPanel extends Panel implements ActionListener, KeyListener {
         labelError.setForeground(Color.red);
         labelError.setVisible(false);
         add(labelError);
-        labelName = new Label("Name:");
-        labelName.setBounds(width / 2 - 150, height / 2 - 60, 75, 25);
+        labelName = new Label("Player Name:");
+        labelName.setBounds(width / 2 - 200, height / 2 - 60, 75, 25);
         add(labelName);
-        labelName2 = new Label("(optional)");
-        labelName2.setBounds(width / 2 + 80, height / 2 - 60, 75, 25);
-        labelName2.setForeground(Color.red);
-        add(labelName2);
-        labelPassword = new Label("Password:");
-        labelPassword.setBounds(width / 2 - 150, height / 2 - 10, 75, 25);
-        add(labelPassword);
-        labelPassword2 = new Label("(optional)");
-        labelPassword2.setBounds(width / 2 + 80, height / 2 - 10, 75, 25);
-        labelPassword2.setForeground(Color.red);
-        add(labelPassword2);
+        //No more labels needed
+        // labelName2 = new Label("");
+        // labelName2.setBounds(width / 2 + 80, height / 2 - 60, 75, 25);
+        // labelName2.setForeground(Color.red);
+        // add(labelName2);
+        // labelPassword = new Label("");
+        // labelPassword.setBounds(width / 2 - 150, height / 2 - 10, 75, 25);
+        // add(labelPassword);
+        // labelPassword2 = new Label("");
+        // labelPassword2.setBounds(width / 2 + 80, height / 2 - 10, 75, 25);
+        // labelPassword2.setForeground(Color.red);
+        // add(labelPassword2);
     }
 
     public void keyTyped(KeyEvent e) {

@@ -44,7 +44,10 @@ public class TrackTestLoginHandler implements PacketHandler {
 
         boolean anonym = true; //!Database.getInstance().authenticateUser(username,password);
         if (anonym) {
-            username = "~anonym-" + (int) (Math.random() * 10000);
+            if (username.length() == 0) {
+                username = "~anonym-" + (int) (Math.random() * 10000);
+                // Warning: Currently duplicates wont get noticed...
+            }
         }
 
         Player player = (Player) packet.getChannel().getAttachment();

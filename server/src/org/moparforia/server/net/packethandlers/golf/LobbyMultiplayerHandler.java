@@ -26,7 +26,7 @@ public class LobbyMultiplayerHandler implements PacketHandler {
     // lobby   jmpt    542534 cock
 
     public Pattern getPattern() {
-        return Pattern.compile("lobby\\t(c|j)mpt\\t([a-zA-Z0-9\\-]+)(?:\\t)?([a-zA-Z0-9\\-]+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?");
+        return Pattern.compile("lobby\\t(c|j)mpt\\t([a-zA-Z0-9 _`~!@#$%^&*()+={}:;<>,\\\\.\\[\\]\\'\\\"?\\/|\\-]+)(?:\\t)?([a-zA-Z0-9 _`~!@#$%^&*()+={}:;<>,\\\\.\\[\\]\\'\\\"?\\/|\\-]+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?(?:\\t)?(\\d+)?");
     }
 
     public boolean handle(Server server, Packet packet, Matcher message) {

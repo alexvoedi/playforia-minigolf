@@ -1,0 +1,42 @@
+---
+language: java
+os: linux
+dist: xenial
+
+jdk:
+  - openjdk8
+
+script:
+  - :
+
+before_deploy:
+  - "export TITLE=testtitle"
+  - "export BODY=testbody"
+  - "zip -r tracks.zip tracks/*"
+  - "cd client ; ant compile ; cd .."
+  - "cd server ; ant compile ; cd .."
+  - "cd editor ; ant compile ; cd .."
+
+jobs:
+  include:
+    - stage: compile
+      name: "Client"
+      script: "cd client ; ant compile"
+    - name: "Server"
+      script: "cd server ; ant compile"
+    - name: "Editor"
+      script: "cd editor ; ant compile"
+    - stage: release
+      deploy:
+        provider: releases
+        api_key: $GitHub_Token
+        title: ${TITLE}
+        body: ${BODY}
+        file:
+          - "server/server.jar"
+          - "client/client.jar"
+          - "editor/editor.jar"
+          - "tracks.zip"
+        skip_cleanup: true
+        on:
+          tags: true
